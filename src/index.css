@@ -1,0 +1,47 @@
+/* Variáveis de Cores (Tema Catppuccin Mocha) */
+:root {
+  --bg-color: #11111b;
+  --card-bg: #1e1e2e;
+  --border-color: #313244;
+  --text-main: #cdd6f4;
+  --text-muted: #bac2de;
+  --primary-color: #89b4fa;
+  --hover-color: #f38ba8;
+}
+
+/* Reset Profissional */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+/* Scroll suave para os links do menu */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos gerais da página */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
