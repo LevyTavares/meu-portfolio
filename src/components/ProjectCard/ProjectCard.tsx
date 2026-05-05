@@ -9,9 +9,9 @@ interface ProjectCardProps {
   isLarge?: boolean;
 }
 
-export function ProjectCard({ title, description, tags, link, isLarge }: ProjectCardProps) {
+export function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
   return (
-    <div className={`${styles.card} ${isLarge ? styles.cardLarge : ''}`}>
+    <div className={styles.card}>
       <div className={styles.stoneTablet}>
         <div className={styles.stoneGlow}></div>
         <h3 className={styles.stoneTitle}>{title}</h3>
@@ -27,7 +27,7 @@ export function ProjectCard({ title, description, tags, link, isLarge }: Project
         </div>
 
         <a href={link} target="_blank" rel="noopener noreferrer" className={styles.button}>
-          Ver no GitHub ➔
+          EXPLORAR FRAGMENTO
         </a>
       </div>
     </div>

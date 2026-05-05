@@ -72,7 +72,8 @@ function App() {
 
         {/* Seção de Projetos */}
         <section id="projetos" className="projects-section">
-          <h2 className="section-title">Meus Projetos</h2>
+          <h2 className="section-title">Galeria de Relíquias</h2>
+          <p className="projects-description">Fragmentos de vidas capturadas nas profundidades. Cada artefato representa uma jornada através do código e do design.</p>
           <div className="projects-grid">
             
             {/* Projeto 1 */}
@@ -81,7 +82,6 @@ function App() {
               description="Uma aplicação desenvolvida com foco em interface, rotas e uma ótima experiência para o usuário."
               tags={['React', 'TypeScript', 'CSS']}
               link="https://github.com/LevyTavares/HollowTrip"
-              imageUrl="https://via.placeholder.com/300x180?text=HollowTrip"
             />
 
             {/* Projeto 2 */}
@@ -90,16 +90,14 @@ function App() {
               description="Um projeto focado em resolver problemas práticos e aplicar conceitos essenciais de desenvolvimento frontend."
               tags={['React', 'JavaScript', 'HTML']}
               link="https://github.com/LevyTavares/testify_app"
-              imageUrl="https://via.placeholder.com/300x180?text=Testify"
             />
 
             {/* Projeto 3 */}
             <ProjectCard 
-              title="Feliz Aniversário" 
-              description="Uma página web interativa e criativa desenvolvida especialmente para celebrar uma data especial."
-              tags={['HTML', 'CSS', 'JavaScript']}
+              title="Arquivo de Hallownest" 
+              description="Um repositório digital de conhecimento antigo, maravilhado para a web moderna com performance impressionante e estética melancólica."
+              tags={['GraphQL', 'Next.js']}
               link="https://github.com/LevyTavares/feliz-anivers-rio"
-              imageUrl="https://via.placeholder.com/300x180?text=Birthday"
               isLarge={true}
             />
 
@@ -111,13 +109,14 @@ function App() {
       {/* RODAPÉ E CONTATO */}
       <footer id="contato" className="footer">
         <div className="container footer-content">
-          <h2 className="footer-title">Vamos trabalhar juntos?</h2>
-          <p className="footer-description">Estou sempre aberto a novas oportunidades e desafios.</p>
+          <h2 className="footer-title">fnuf</h2>
           <div className="footer-links">
-            <a href="https://github.com/LevyTavares" target="_blank" rel="noreferrer" className="footer-link">GitHub</a>
-            <a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noreferrer" className="footer-link">LinkedIn</a>
-            <a href="mailto:isaiaslevi2@gmail.com" className="footer-link">E-mail</a>
+            <a href="https://github.com/LevyTavares" target="_blank" rel="noreferrer" className="footer-link">VOID</a>
+            <a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noreferrer" className="footer-link">ABYSS</a>
+            <a href="mailto:isaiaslevi2@gmail.com" className="footer-link">SURFACE</a>
+            <a href="#sobre" className="footer-link">FADED</a>
           </div>
+          <p className="footer-description">© 2024 FNUF. ALL VOIDS RESERVED.</p>
         </div>
       </footer>
     </>
