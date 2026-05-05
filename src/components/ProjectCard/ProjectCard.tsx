@@ -6,11 +6,12 @@ interface ProjectCardProps {
   tags: string[];
   link: string;
   imageUrl?: string;
+  isLarge?: boolean;
 }
 
-export function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
+export function ProjectCard({ title, description, tags, link, isLarge }: ProjectCardProps) {
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${isLarge ? styles.cardLarge : ''}`}>
       <div className={styles.stoneTablet}>
         <div className={styles.stoneGlow}></div>
         <h3 className={styles.stoneTitle}>{title}</h3>

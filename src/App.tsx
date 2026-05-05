@@ -100,6 +100,7 @@ function App() {
               tags={['HTML', 'CSS', 'JavaScript']}
               link="https://github.com/LevyTavares/feliz-anivers-rio"
               imageUrl="https://via.placeholder.com/300x180?text=Birthday"
+              isLarge={true}
             />
 
           </div>
