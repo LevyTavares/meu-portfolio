@@ -1,12 +1,17 @@
-/* Variáveis de Cores (Tema Catppuccin Mocha) */
+/* Google Fonts - Newsreader */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,8..72,400;0,8..72,600;0,8..72,700;1,8..72,400&display=swap');
+
+/* Variáveis de Cores (Tema Hollow Knight) */
 :root {
-  --bg-color: #11111b;
-  --card-bg: #1e1e2e;
-  --border-color: #313244;
-  --text-main: #cdd6f4;
-  --text-muted: #bac2de;
-  --primary-color: #89b4fa;
-  --hover-color: #f38ba8;
+  --bg-color: #12121e;
+  --card-bg: #1a1a2e;
+  --border-color: #2d2d4a;
+  --text-main: #e3e0f2;
+  --text-muted: #b8b5cc;
+  --primary-color: #adc6ff;
+  --hover-color: #8ba8ff;
+  --accent-stone: #3d3a52;
+  --stone-glow: rgba(173, 198, 255, 0.3);
 }
 
 /* Reset Profissional */
@@ -24,7 +29,7 @@ html {
 body {
   background-color: var(--bg-color);
   color: var(--text-main);
-  font-family: 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-family: 'Newsreader', 'Georgia', serif;
   line-height: 1.6;
   font-weight: 400;
   letter-spacing: 0.3px;

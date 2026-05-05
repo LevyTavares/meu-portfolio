@@ -8,14 +8,13 @@ interface ProjectCardProps {
   imageUrl?: string;
 }
 
-export function ProjectCard({ title, description, tags, link, imageUrl }: ProjectCardProps) {
+export function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
   return (
     <div className={styles.card}>
-      {imageUrl && (
-        <div className={styles.imageContainer}>
-          <img src={imageUrl} alt={title} className={styles.image} />
-        </div>
-      )}
+      <div className={styles.stoneTablet}>
+        <div className={styles.stoneGlow}></div>
+        <h3 className={styles.stoneTitle}>{title}</h3>
+      </div>
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>

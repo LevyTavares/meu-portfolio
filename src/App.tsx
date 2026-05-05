@@ -1,6 +1,8 @@
 import './App.css'
 import { SkillCard } from './components/SkillCard/SkillCard'
 import { ProjectCard } from './components/ProjectCard/ProjectCard'
+import logoNavbar from './images/logo-navbar.png'
+import logoHero from './images/logo-hero.png'
 
 function App() {
   return (
@@ -8,7 +10,7 @@ function App() {
       {/* CABEÇALHO */}
       <header className="header">
         <div className="container header-content">
-          <h2 className="logo"><span className="logo-name">fnuf</span></h2>
+          <img src={logoNavbar} alt="fnuf" className="logo-navbar" />
           <nav className="nav">
             <a href="#sobre" className="nav-link">Sobre</a>
             <a href="#habilidades" className="nav-link">Habilidades</a>
@@ -23,6 +25,7 @@ function App() {
         
         {/* Seção Hero (Apresentação) */}
         <section className="hero">
+          <img src={logoHero} alt="fnuf Hero" className="hero-logo" />
           <h1 className="hero-title">Olá, eu sou <br/><span className="hero-highlight">fnuf</span></h1>
           <p className="hero-subtitle">
             Desenvolvedor Frontend focado em criar interfaces rápidas, acessíveis e responsivas utilizando React, TypeScript e o ecossistema moderno da web.
