@@ -1,0 +1,45 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#0a0a0e" rx="50"/>
+  
+  <!-- Glow effect -->
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#6ba3ff;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#4a8eff;stop-opacity:0.1"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Glow background -->
+  <circle cx="100" cy="100" r="95" fill="url(#glowGrad)" opacity="0.6"/>
+  
+  <!-- Outer decorative circle -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#6ba3ff" stroke-width="2" opacity="0.5"/>
+  
+  <!-- FNUF Text -->
+  <text x="100" y="115" font-family="Georgia, serif" font-size="72" font-weight="400" text-anchor="middle" fill="#f0f0f0" filter="url(#glow)" letter-spacing="2">
+    FNUF
+  </text>
+  
+  <!-- Decorative elements (top) -->
+  <g stroke="#4a8eff" stroke-width="1.5" fill="none" opacity="0.6">
+    <line x1="100" y1="20" x2="100" y2="35"/>
+    <path d="M 85 25 Q 100 20 115 25" stroke-width="1"/>
+  </g>
+  
+  <!-- Decorative elements (bottom) -->
+  <g stroke="#4a8eff" stroke-width="1.5" fill="none" opacity="0.6">
+    <line x1="100" y1="165" x2="100" y2="180"/>
+    <path d="M 85 175 Q 100 180 115 175" stroke-width="1"/>
+  </g>
+  
+  <!-- Inner glow accent -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#6ba3ff" stroke-width="1" opacity="0.3"/>
+</svg>

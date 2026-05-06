@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
-import profileImage from '/profile.svg';
+import profileImage from '/profile-fnuf.svg';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { SiReact, SiTypescript } from 'react-icons/si';
 

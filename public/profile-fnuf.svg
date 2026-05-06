@@ -1,0 +1,86 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#1a2a3a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0a0a0e;stop-opacity:1"/>
+    </radialGradient>
+    <filter id="glowEffect" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="300" height="300" fill="url(#bgGrad)"/>
+  
+  <!-- Top decorative ornament -->
+  <g stroke="#4a8eff" stroke-width="2" fill="none" opacity="0.7">
+    <line x1="150" y1="15" x2="150" y2="35"/>
+    <path d="M 130 30 Q 150 20 170 30" stroke-width="1.5"/>
+    <circle cx="120" cy="38" r="3" fill="#6ba3ff" opacity="0.8"/>
+    <circle cx="180" cy="38" r="3" fill="#6ba3ff" opacity="0.8"/>
+  </g>
+  
+  <!-- Main circle background with glow -->
+  <circle cx="150" cy="130" r="110" fill="#0f1820" stroke="#6ba3ff" stroke-width="3" filter="url(#glowEffect)" opacity="0.9"/>
+  <circle cx="150" cy="130" r="110" fill="none" stroke="#4a8eff" stroke-width="1" opacity="0.4" filter="url(#glowEffect)"/>
+  
+  <!-- Inner glow -->
+  <circle cx="150" cy="130" r="105" fill="none" stroke="#6ba3ff" stroke-width="1.5" opacity="0.2"/>
+  
+  <!-- FNUF Text -->
+  <text x="150" y="155" font-family="Georgia, serif" font-size="96" font-weight="400" text-anchor="middle" fill="#f0f0f0" filter="url(#textGlow)" letter-spacing="3">
+    FNUF
+  </text>
+  
+  <!-- Hollow Knight inspired sigil (bottom center) -->
+  <g transform="translate(150, 220)" opacity="0.7">
+    <!-- Vertical spine -->
+    <line x1="0" y1="-8" x2="0" y2="8" stroke="#6ba3ff" stroke-width="2"/>
+    <!-- Top point -->
+    <polygon points="0,-10 -3,-5 3,-5" fill="#6ba3ff"/>
+    <!-- Side curves -->
+    <path d="M -8,-2 Q -5,-5 0,-6" stroke="#4a8eff" stroke-width="1.5" fill="none"/>
+    <path d="M 8,-2 Q 5,-5 0,-6" stroke="#4a8eff" stroke-width="1.5" fill="none"/>
+    <!-- Bottom details -->
+    <circle cx="-5" cy="6" r="2" fill="#4a8eff" opacity="0.8"/>
+    <circle cx="5" cy="6" r="2" fill="#4a8eff" opacity="0.8"/>
+  </g>
+  
+  <!-- Side decorative elements (left) -->
+  <g stroke="#4a8eff" stroke-width="1.5" fill="none" opacity="0.5">
+    <circle cx="35" cy="80" r="2" fill="#6ba3ff"/>
+    <line x1="35" y1="85" x2="35" y2="95"/>
+    <circle cx="35" cy="170" r="2" fill="#6ba3ff"/>
+    <line x1="35" y1="165" x2="35" y2="155"/>
+  </g>
+  
+  <!-- Side decorative elements (right) -->
+  <g stroke="#4a8eff" stroke-width="1.5" fill="none" opacity="0.5">
+    <circle cx="265" cy="80" r="2" fill="#6ba3ff"/>
+    <line x1="265" y1="85" x2="265" y2="95"/>
+    <circle cx="265" cy="170" r="2" fill="#6ba3ff"/>
+    <line x1="265" y1="165" x2="265" y2="155"/>
+  </g>
+  
+  <!-- Bottom decorative ornament -->
+  <g stroke="#4a8eff" stroke-width="2" fill="none" opacity="0.6">
+    <path d="M 120 270 Q 150 280 180 270" stroke-width="1.5"/>
+    <circle cx="130" cy="265" r="3" fill="#6ba3ff" opacity="0.8"/>
+    <circle cx="170" cy="265" r="3" fill="#6ba3ff" opacity="0.8"/>
+  </g>
+  
+  <!-- Outer glow ring -->
+  <circle cx="150" cy="130" r="115" fill="none" stroke="#6ba3ff" stroke-width="1" opacity="0.2" stroke-dasharray="5,5"/>
+</svg>
