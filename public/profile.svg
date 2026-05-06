@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Fundo circular com glow -->
+  <defs>
+    <filter id="glow-profile">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="bg-gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1a2a4f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f1620;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Círculo de fundo -->
+  <circle cx="100" cy="100" r="95" fill="url(#bg-gradient)" stroke="#6ba3ff" stroke-width="2" filter="url(#glow-profile)"/>
+  
+  <!-- Padrão hexagonal/geométrico do fundo -->
+  <g opacity="0.1">
+    <circle cx="100" cy="100" r="60" fill="none" stroke="#6ba3ff" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="45" fill="none" stroke="#6ba3ff" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="30" fill="none" stroke="#6ba3ff" stroke-width="0.5"/>
+  </g>
+  
+  <!-- "FNUF" estilizado -->
+  <text x="100" y="115" font-family="'Cinzel', serif" font-size="42" font-weight="bold" fill="#6ba3ff" text-anchor="middle" letter-spacing="2" filter="url(#glow-profile)">FNUF</text>
+  
+  <!-- Linha decorativa -->
+  <line x1="55" y1="65" x2="145" y2="65" stroke="#6ba3ff" stroke-width="1.5" opacity="0.5"/>
+  <line x1="55" y1="135" x2="145" y2="135" stroke="#6ba3ff" stroke-width="1.5" opacity="0.5"/>
+  
+  <!-- Pontos de acentuação -->
+  <circle cx="60" cy="80" r="2" fill="#6ba3ff" opacity="0.7"/>
+  <circle cx="140" cy="80" r="2" fill="#6ba3ff" opacity="0.7"/>
+  <circle cx="60" cy="120" r="2" fill="#6ba3ff" opacity="0.7"/>
+  <circle cx="140" cy="120" r="2" fill="#6ba3ff" opacity="0.7"/>
+</svg>
