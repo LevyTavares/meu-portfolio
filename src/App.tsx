@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
 import profileImage from '/profile.svg';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGraduationCap } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { SiReact, SiTypescript } from 'react-icons/si';
 
 function App() {
@@ -80,7 +80,7 @@ function App() {
       {/* Botão de Mute */}
       {hasEntered && (
         <button className="mute-button" onClick={toggleMute} aria-label="Mutar/Desmutar música">
-          <span className="mute-icon">{isMuted ? '🔇' : '🔊'}</span>
+          {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
         </button>
       )}
       

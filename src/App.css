@@ -63,17 +63,25 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--accent-blue);
 }
 
 .mute-button:hover {
   background: rgba(107, 163, 255, 0.2);
   box-shadow: 0 0 20px var(--glow-blue);
   transform: scale(1.1);
+  color: var(--glow-blue);
 }
 
 .mute-button:active {
   transform: scale(0.95);
+}
+
+.mute-button svg {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
 }
 
 /* ============================================================
