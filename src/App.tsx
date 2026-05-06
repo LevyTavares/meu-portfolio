@@ -160,26 +160,26 @@ function App() {
                 <a href="https://github.com/LevyTavares/hollowtrip" target="_blank" rel="noopener noreferrer" className="project-item">
                   <div className="project-header">
                     <h3>HollowTrip</h3>
-                    <span className="tech-tag">React • UX/UI</span>
+                    <span className="tech-tag">React Native • Expo</span>
                   </div>
-                  <p>Experiência imersiva focada em transições suaves e gerenciamento de estados complexos.</p>
+                  <p>App interativo em React Native que explora três locais icônicos do Hollow Knight. Combina UI dark temática, animações suaves, trilha sonora imersiva e navegação responsiva entre atrações com componentes reutilizáveis.</p>
                   <span className="project-link">Ver Projeto →</span>
                 </a>
-                <a href="https://github.com/LevyTavares/testify-ui" target="_blank" rel="noopener noreferrer" className="project-item">
+                <a href="https://github.com/LevyTavares/testify_app" target="_blank" rel="noopener noreferrer" className="project-item">
                   <div className="project-header">
-                    <h3>Testify UI</h3>
-                    <span className="tech-tag">TypeScript • Dashboard</span>
+                    <h3>Testify App</h3>
+                    <span className="tech-tag">React Native • TypeScript</span>
                   </div>
-                  <p>Dashboard de monitoramento com componentes reutilizáveis e arquitetura escalável.</p>
+                  <p>Aplicativo mobile/web com Expo Router para gerenciamento de templates de correção. Inclui captura de imagens via câmera, geração de relatórios, persistência local via SQLite e integração com backend FastAPI para compartilhamento de gabaritos.</p>
                   <span className="project-link">Ver Projeto →</span>
                 </a>
-                <a href="https://github.com/LevyTavares/vazio-framework" target="_blank" rel="noopener noreferrer" className="project-item">
+                <a href="https://github.com/LevyTavares" target="_blank" rel="noopener noreferrer" className="project-item">
                   <div className="project-header">
-                    <h3>Vazio Framework</h3>
-                    <span className="tech-tag">React • Biblioteca</span>
+                    <h3>Projetos em Progresso</h3>
+                    <span className="tech-tag">Full Stack • Inovação</span>
                   </div>
-                  <p>Biblioteca pessoal de componentes React inspirada na estética de Hallownest.</p>
-                  <span className="project-link">Ver Projeto →</span>
+                  <p>Explorando novas tecnologias e arquiteturas. Desenvolvendo componentes reutilizáveis, APIs robustas e experiências frontend inovadoras. Focado em performance, escalabilidade e design system consistente com estética Hollow Knight.</p>
+                  <span className="project-link">Ver Mais →</span>
                 </a>
               </div>
             </section>
@@ -206,7 +206,13 @@ function App() {
 
           {/* SIDEBAR DIREITA (30%) */}
           <aside className="sidebar">
-            {/* Card Skills */}
+            {/* Card Marca FNUF */}
+            <div className="sidebar-card fnuf-brand reveal">
+              <div className="fnuf-logo">FNUF</div>
+              <p className="fnuf-tagline">Frontend Developer • UI/UX Enthusiast</p>
+            </div>
+
+            {/* Card Tecnologias */}
             <div className="sidebar-card reveal">
               <h3>Tecnologias</h3>
               <div className="skills-icons">

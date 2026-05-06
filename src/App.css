@@ -585,6 +585,53 @@ body {
   background: rgba(107, 163, 255, 0.1);
 }
 
+/* FNUF Brand Card */
+.fnuf-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 1.5rem !important;
+  background: linear-gradient(135deg, rgba(107, 163, 255, 0.08) 0%, rgba(74, 142, 255, 0.04) 100%);
+  border: 1px solid var(--accent-blue);
+  box-shadow: 0 0 30px var(--glow-blue), inset 0 0 20px rgba(107, 163, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.fnuf-brand::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(107, 163, 255, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.fnuf-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: var(--soul-white);
+  text-shadow: 0 0 20px var(--glow-blue), 0 0 40px var(--accent-blue);
+  position: relative;
+  z-index: 1;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.fnuf-tagline {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  text-align: center;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
 /* Quick Links */
 .quick-links {
   display: flex;
