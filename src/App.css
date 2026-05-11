@@ -799,55 +799,91 @@ body {
   margin: 0;
 }
 
-/* Interpersonal Skills */
-.interpersonal-skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 0.8rem;
-}
-
-.interpersonal-skill {
+/* Availability Card */
+.availability-card {
+  background: linear-gradient(135deg, rgba(107, 163, 255, 0.1) 0%, rgba(74, 142, 255, 0.05) 100%);
+  border: 2px solid var(--accent-blue);
+  box-shadow: 0 0 25px rgba(74, 142, 255, 0.3), inset 0 0 15px rgba(107, 163, 255, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem;
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  background: rgba(107, 163, 255, 0.02);
-  transition: all 0.3s ease;
-  cursor: default;
+  justify-content: center;
+  gap: 0.8rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.interpersonal-skill:hover {
-  border-color: var(--accent-blue);
-  background: rgba(107, 163, 255, 0.08);
+.availability-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(107, 163, 255, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.availability-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0.5rem 0 0 0 !important;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.availability-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.availability-icon {
+  font-size: 2.5rem;
+  color: var(--accent-blue);
+  filter: drop-shadow(0 0 15px var(--glow-blue));
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.availability-badge {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(90deg, rgba(107, 163, 255, 0.2), rgba(74, 142, 255, 0.2));
+  border: 1px solid var(--accent-blue);
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: var(--soul-white);
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
   box-shadow: 0 0 15px var(--glow-blue);
 }
 
-.interpersonal-skill svg {
-  font-size: 1.5rem;
-  color: var(--accent-blue);
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 0 8px var(--glow-blue));
+.availability-card:hover .availability-badge {
+  background: linear-gradient(90deg, rgba(107, 163, 255, 0.3), rgba(74, 142, 255, 0.3));
+  box-shadow: 0 0 25px var(--glow-blue);
+  transform: translateY(-2px);
 }
 
-.interpersonal-skill:hover svg {
-  color: var(--glow-blue);
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 15px var(--glow-blue));
-}
-
-.interpersonal-skill span {
-  font-family: 'Space Grotesk', 'Monaco', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+.availability-desc {
+  position: relative;
+  z-index: 1;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.75rem;
   color: var(--text-secondary);
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0 0.5rem;
 }
 
+/* Interpersonal Skills */
 /* Quick Links */
 .quick-links {
   display: flex;

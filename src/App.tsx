@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
 import profileImage from '/profile-fnuf.svg';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaVolumeUp, FaVolumeMute, FaGitAlt, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaVolumeUp, FaVolumeMute, FaGitAlt, FaHtml5, FaCss3Alt, FaCheckCircle } from 'react-icons/fa';
 import { SiReact, SiTypescript, SiJavascript, SiSass, SiCssmodules } from 'react-icons/si';
-import { HiOutlineUsers, HiOutlineChatAlt2, HiOutlineClipboardList, HiOutlineUserGroup, HiOutlineLightningBolt, HiOutlineHeart, HiOutlineClipboardCheck } from 'react-icons/hi';
+import { HiOutlineUsers, HiOutlineChatAlt2, HiOutlineClipboardList, HiOutlineUserGroup, HiOutlineLightningBolt } from 'react-icons/hi';
 
 function App() {
   const [hasEntered, setHasEntered] = useState(false);
@@ -353,31 +353,16 @@ function App() {
               <p className="fnuf-tagline">Frontend Developer • UI/UX Enthusiast</p>
             </div>
 
-            {/* Card Habilidades Interpessoais */}
-            <div className="sidebar-card reveal">
-              <h3>Habilidades Interpessoais</h3>
-              <div className="interpersonal-skills">
-                <div className="interpersonal-skill" title="Empatia">
-                  <HiOutlineHeart />
-                  <span>Empatia</span>
-                </div>
-                <div className="interpersonal-skill" title="Boa Comunicação">
-                  <HiOutlineChatAlt2 />
-                  <span>Comunicação</span>
-                </div>
-                <div className="interpersonal-skill" title="Organização Exemplar">
-                  <HiOutlineClipboardCheck />
-                  <span>Organização</span>
-                </div>
-                <div className="interpersonal-skill" title="Atividades em Grupo">
-                  <HiOutlineUserGroup />
-                  <span>Trabalho em Equipe</span>
-                </div>
-                <div className="interpersonal-skill" title="Proatividade">
-                  <HiOutlineLightningBolt />
-                  <span>Proatividade</span>
-                </div>
+            {/* Card Disponibilidade */}
+            <div className="sidebar-card availability-card reveal">
+              <div className="availability-header">
+                <FaCheckCircle className="availability-icon" />
               </div>
+              <h3>Disponível</h3>
+              <div className="availability-badge">
+                Aberto para Oportunidades
+              </div>
+              <p className="availability-desc">Consultoria, Projetos Freelance ou Posição CLT em Frontend</p>
             </div>
 
             {/* Card Educação */}
