@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
 import profileImage from '/profile-fnuf.svg';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
-import { SiReact, SiTypescript } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaVolumeUp, FaVolumeMute, FaGitAlt, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { SiReact, SiTypescript, SiJavascript, SiSass } from 'react-icons/si';
+import { HiOutlineUsers, HiOutlineChatAlt2, HiOutlineClipboardList, HiOutlineUserGroup, HiOutlineLightningBolt } from 'react-icons/hi';
 
 function App() {
   const [hasEntered, setHasEntered] = useState(false);
@@ -153,7 +154,137 @@ function App() {
               </p>
             </section>
 
-            {/* SEÇÃO PROJETOS */}
+            {/* SEÇÃO TECNOLOGIAS EXPANDIDA */}
+            <section className="tech-skills-section reveal">
+              <h2>Tecnologias & Ferramentas</h2>
+              <div className="tech-grid">
+                <div className="tech-card">
+                  <div className="tech-icon">
+                    <SiReact />
+                  </div>
+                  <div className="tech-info">
+                    <h4>React</h4>
+                    <p>Library moderna para UI componentizada</p>
+                  </div>
+                </div>
+
+                <div className="tech-card">
+                  <div className="tech-icon">
+                    <SiTypescript />
+                  </div>
+                  <div className="tech-info">
+                    <h4>TypeScript</h4>
+                    <p>Type-safe JavaScript em larga escala</p>
+                  </div>
+                </div>
+
+                <div className="tech-card">
+                  <div className="tech-icon">
+                    <SiJavascript />
+                  </div>
+                  <div className="tech-info">
+                    <h4>JavaScript ES6+</h4>
+                    <p>Linguagem core com sintaxe moderna</p>
+                  </div>
+                </div>
+
+                <div className="tech-card">
+                  <div className="tech-icon">
+                    <FaHtml5 />
+                  </div>
+                  <div className="tech-info">
+                    <h4>HTML5</h4>
+                    <p>Estrutura semântica e acessível</p>
+                  </div>
+                </div>
+
+                <div className="tech-card">
+                  <div className="tech-icon">
+                    <FaCss3Alt />
+                  </div>
+                  <div className="tech-info">
+                    <h4>CSS3</h4>
+                    <p>Estilização avançada e responsive</p>
+                  </div>
+                </div>
+
+                <div className="tech-card">
+                  <div className="tech-icon">
+                    <SiSass />
+                  </div>
+                  <div className="tech-info">
+                    <h4>SASS/SCSS</h4>
+                    <p>CSS preprocessado com superpotências</p>
+                  </div>
+                </div>
+
+                <div className="tech-card">
+                  <div className="tech-icon">
+                    <FaGitAlt />
+                  </div>
+                  <div className="tech-info">
+                    <h4>Git/GitHub</h4>
+                    <p>Controle de versão e colaboração</p>
+                  </div>
+                </div>
+
+                <div className="tech-card">
+                  <div className="tech-icon">
+                    <FaGithub />
+                  </div>
+                  <div className="tech-info">
+                    <h4>DevTools</h4>
+                    <p>Vite, npm, ESLint, TypeScript</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* SEÇÃO HABILIDADES INTERPESSOAIS */}
+            <section className="soft-skills-section reveal">
+              <h2>Habilidades Interpessoais</h2>
+              <div className="skills-grid">
+                <div className="skill-item">
+                  <div className="skill-icon">
+                    <HiOutlineUsers />
+                  </div>
+                  <h4>Empatia</h4>
+                  <p>Compreender necessidades do usuário e equipe</p>
+                </div>
+
+                <div className="skill-item">
+                  <div className="skill-icon">
+                    <HiOutlineChatAlt2 />
+                  </div>
+                  <h4>Comunicação</h4>
+                  <p>Expressar ideias de forma clara e objetiva</p>
+                </div>
+
+                <div className="skill-item">
+                  <div className="skill-icon">
+                    <HiOutlineClipboardList />
+                  </div>
+                  <h4>Organização</h4>
+                  <p>Planejamento exemplar e gestão de tarefas</p>
+                </div>
+
+                <div className="skill-item">
+                  <div className="skill-icon">
+                    <HiOutlineUserGroup />
+                  </div>
+                  <h4>Trabalho em Equipe</h4>
+                  <p>Colaboração efetiva com diferentes grupos</p>
+                </div>
+
+                <div className="skill-item">
+                  <div className="skill-icon">
+                    <HiOutlineLightningBolt />
+                  </div>
+                  <h4>Proatividade</h4>
+                  <p>Iniciativa na solução de problemas</p>
+                </div>
+              </div>
+            </section>
             <section className="projects-section reveal">
               <h2>Projetos em Desenvolvimento</h2>
               <div className="projects-list">

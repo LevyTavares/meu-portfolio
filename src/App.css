@@ -308,6 +308,168 @@ body {
 }
 
 /* ============================================================
+   8.5. SEÇÃO TECNOLOGIAS & FERRAMENTAS
+   ============================================================ */
+.tech-skills-section {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 2px;
+}
+
+.tech-skills-section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.tech-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: rgba(107, 163, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+  border-color: var(--accent-blue);
+  background: rgba(107, 163, 255, 0.08);
+  box-shadow: 0 0 15px var(--glow);
+  transform: translateY(-2px);
+}
+
+.tech-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--accent-blue);
+  filter: drop-shadow(0 0 8px var(--glow-blue));
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.tech-card:hover .tech-icon {
+  color: var(--glow-blue);
+  filter: drop-shadow(0 0 15px var(--glow-blue));
+  transform: scale(1.1);
+}
+
+.tech-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.tech-info h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  color: var(--soul-white);
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.tech-info p {
+  font-family: 'Lora', serif;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ============================================================
+   8.6. SEÇÃO HABILIDADES INTERPESSOAIS
+   ============================================================ */
+.soft-skills-section {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 2px;
+}
+
+.soft-skills-section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: rgba(107, 163, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  border-color: var(--accent-blue);
+  background: rgba(107, 163, 255, 0.08);
+  box-shadow: 0 0 15px var(--glow);
+  transform: translateY(-3px);
+}
+
+.skill-item .skill-icon {
+  font-size: 2.5rem;
+  color: var(--accent-blue);
+  margin-bottom: 0.8rem;
+  filter: drop-shadow(0 0 8px var(--glow-blue));
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+  color: var(--glow-blue);
+  filter: drop-shadow(0 0 15px var(--glow-blue));
+  transform: scale(1.15);
+}
+
+.skill-item h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--soul-white);
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.skill-item p {
+  font-family: 'Lora', serif;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ============================================================
    9. SEÇÃO PROJETOS
    ============================================================ */
 .projects-section {
@@ -739,8 +901,20 @@ footer {
 
   .projects-section,
   .about-section,
+  .tech-skills-section,
+  .soft-skills-section,
   .cta-section {
     padding: 1.5rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
   }
 
   .cta-links {
