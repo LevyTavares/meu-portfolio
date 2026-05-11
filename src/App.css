@@ -658,6 +658,11 @@ body {
 
 .sidebar-card h3 svg {
   font-size: 0.95rem;
+  filter: drop-shadow(0 0 8px var(--glow-blue));
+}
+
+.sidebar-card h3 svg {
+  font-size: 0.95rem;
 }
 
 .card-content {
@@ -794,6 +799,55 @@ body {
   margin: 0;
 }
 
+/* Interpersonal Skills */
+.interpersonal-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.8rem;
+}
+
+.interpersonal-skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: rgba(107, 163, 255, 0.02);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.interpersonal-skill:hover {
+  border-color: var(--accent-blue);
+  background: rgba(107, 163, 255, 0.08);
+  box-shadow: 0 0 15px var(--glow-blue);
+}
+
+.interpersonal-skill svg {
+  font-size: 1.5rem;
+  color: var(--accent-blue);
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 8px var(--glow-blue));
+}
+
+.interpersonal-skill:hover svg {
+  color: var(--glow-blue);
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 15px var(--glow-blue));
+}
+
+.interpersonal-skill span {
+  font-family: 'Space Grotesk', 'Monaco', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.2;
+}
+
 /* Quick Links */
 .quick-links {
   display: flex;
@@ -802,7 +856,9 @@ body {
 }
 
 .quick-links a {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--accent-blue);
   text-decoration: none;
   font-size: 0.9rem;
@@ -812,9 +868,21 @@ body {
   padding-bottom: 0.2rem;
 }
 
+.quick-links a svg {
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 8px var(--glow-blue));
+}
+
 .quick-links a:hover {
   border-bottom-color: var(--accent-blue);
   color: var(--soul-white);
+}
+
+.quick-links a:hover svg {
+  color: var(--glow-blue);
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 15px var(--glow-blue));
 }
 
 /* ============================================================

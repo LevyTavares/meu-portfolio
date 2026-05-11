@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from 'react';
 import './App.css';
 import profileImage from '/profile-fnuf.svg';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaVolumeUp, FaVolumeMute, FaGitAlt, FaHtml5, FaCss3Alt } from 'react-icons/fa';
-import { SiReact, SiTypescript, SiJavascript, SiSass } from 'react-icons/si';
-import { HiOutlineUsers, HiOutlineChatAlt2, HiOutlineClipboardList, HiOutlineUserGroup, HiOutlineLightningBolt } from 'react-icons/hi';
+import { SiReact, SiTypescript, SiJavascript, SiSass, SiCssmodules } from 'react-icons/si';
+import { HiOutlineUsers, HiOutlineChatAlt2, HiOutlineClipboardList, HiOutlineUserGroup, HiOutlineLightningBolt, HiOutlineHeart, HiOutlineClipboardCheck } from 'react-icons/hi';
 
 function App() {
   const [hasEntered, setHasEntered] = useState(false);
@@ -237,6 +237,16 @@ function App() {
                     <p>Vite, npm, ESLint, TypeScript</p>
                   </div>
                 </div>
+
+                <div className="tech-card">
+                  <div className="tech-icon">
+                    <SiCssmodules />
+                  </div>
+                  <div className="tech-info">
+                    <h4>CSS Modules</h4>
+                    <p>Estilização modular e segura para componentes</p>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -343,22 +353,30 @@ function App() {
               <p className="fnuf-tagline">Frontend Developer • UI/UX Enthusiast</p>
             </div>
 
-            {/* Card Tecnologias */}
+            {/* Card Habilidades Interpessoais */}
             <div className="sidebar-card reveal">
-              <h3>Tecnologias</h3>
-              <div className="skills-icons">
-                <div className="skill-icon" title="React">
-                  <SiReact />
-                  <span>React</span>
+              <h3>Habilidades Interpessoais</h3>
+              <div className="interpersonal-skills">
+                <div className="interpersonal-skill" title="Empatia">
+                  <HiOutlineHeart />
+                  <span>Empatia</span>
                 </div>
-                <div className="skill-icon" title="TypeScript">
-                  <SiTypescript />
-                  <span>TypeScript</span>
+                <div className="interpersonal-skill" title="Boa Comunicação">
+                  <HiOutlineChatAlt2 />
+                  <span>Comunicação</span>
                 </div>
-              </div>
-              <div className="skills-tags">
-                <span className="skill-tag">CSS Modules</span>
-                <span className="skill-tag">Vite</span>
+                <div className="interpersonal-skill" title="Organização Exemplar">
+                  <HiOutlineClipboardCheck />
+                  <span>Organização</span>
+                </div>
+                <div className="interpersonal-skill" title="Atividades em Grupo">
+                  <HiOutlineUserGroup />
+                  <span>Trabalho em Equipe</span>
+                </div>
+                <div className="interpersonal-skill" title="Proatividade">
+                  <HiOutlineLightningBolt />
+                  <span>Proatividade</span>
+                </div>
               </div>
             </div>
 
@@ -383,9 +401,15 @@ function App() {
             <div className="sidebar-card reveal">
               <h3>Links</h3>
               <div className="quick-links">
-                <a href="https://github.com/LevyTavares" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://www.linkedin.com/in/isa%C3%ADas-levi-tavares-da-silva-38414b195/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="mailto:isaiaslevi2@gmail.com">Email</a>
+                <a href="https://github.com/LevyTavares" target="_blank" rel="noopener noreferrer" title="GitHub">
+                  <FaGithub /> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/isa%C3%ADas-levi-tavares-da-silva-38414b195/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                  <FaLinkedin /> LinkedIn
+                </a>
+                <a href="mailto:isaiaslevi2@gmail.com" title="Email">
+                  <FaEnvelope /> Email
+                </a>
               </div>
             </div>
           </aside>
