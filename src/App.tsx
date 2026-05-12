@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
+import './styles/contact-form.css';
+import { ContactForm } from './components/ContactForm';
 import profileImage from '/profile-fnuf.svg';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaVolumeUp, FaVolumeMute, FaGitAlt, FaHtml5, FaCss3Alt, FaCheckCircle } from 'react-icons/fa';
 import { SiReact, SiTypescript, SiJavascript, SiSass, SiCssmodules } from 'react-icons/si';
@@ -323,6 +325,13 @@ function App() {
                   <span className="project-link">Ver Mais →</span>
                 </a>
               </div>
+            </section>
+
+            {/* SEÇÃO DE CONTATO */}
+            <section className="contact-section reveal">
+              <h2>Entre em Contato</h2>
+              <p className="contact-intro">Tem uma pergunta ou proposta? Envie uma mensagem e responderei assim que possível.</p>
+              <ContactForm />
             </section>
 
             {/* SEÇÃO CTA */}

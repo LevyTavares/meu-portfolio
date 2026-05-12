@@ -1,0 +1,6 @@
+name = "meu-portfolio-api"
+main = "src/index.ts"
+compatibility_date = "2025-07-18"
+
+[env.production]
+vars = { RESEND_API_KEY = "" }

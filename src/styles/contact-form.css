@@ -1,0 +1,200 @@
+/* ============================================================
+   FORMULÁRIO DE CONTATO - HOLLOW KNIGHT THEME
+   ============================================================ */
+
+/* Variáveis do tema (importadas do App.css) */
+:root {
+  --void-bg: #020204;
+  --soul-white: #f0f0f0;
+  --text-secondary: #a8a8a8;
+  --accent-blue: #6ba3ff;
+  --glow-blue: #4a8eff;
+  --glow: rgba(107, 163, 255, 0.3);
+  --glass: rgba(255, 255, 255, 0.02);
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+.contact-section {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+}
+
+.contact-section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.contact-intro {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* FORMULÁRIO */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(107, 163, 255, 0.15);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(107, 163, 255, 0.05);
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-form label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* INPUT E TEXTAREA */
+.contact-form input,
+.contact-form textarea {
+  padding: 0.875rem 1rem;
+  border: 1px solid rgba(107, 163, 255, 0.2);
+  border-radius: 2px;
+  background: rgba(2, 2, 4, 0.6);
+  color: var(--soul-white);
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(168, 168, 168, 0.5);
+}
+
+/* FOCUS STATE */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  background: rgba(2, 2, 4, 0.8);
+  box-shadow: 
+    0 0 10px rgba(107, 163, 255, 0.2),
+    inset 0 0 10px rgba(107, 163, 255, 0.05);
+}
+
+/* TEXTAREA ESPECÍFICO */
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+/* BOTÃO ENVIAR */
+.contact-form button {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--accent-blue), var(--glow-blue));
+  color: #020204;
+  border: 1px solid rgba(107, 163, 255, 0.3);
+  border-radius: 2px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  box-shadow: 0 0 15px rgba(107, 163, 255, 0.2);
+}
+
+.contact-form button:hover:not(:disabled) {
+  box-shadow: 
+    0 0 20px rgba(107, 163, 255, 0.4),
+    0 0 40px rgba(107, 163, 255, 0.2);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--glow-blue), #5a9eff);
+}
+
+.contact-form button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 0 10px rgba(107, 163, 255, 0.2);
+}
+
+.contact-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: 0 0 10px rgba(107, 163, 255, 0.1);
+}
+
+/* MENSAGENS DE STATUS */
+.status-message {
+  padding: 1rem;
+  border-radius: 2px;
+  text-align: center;
+  font-weight: 500;
+  animation: slideIn 0.3s ease;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.status-message.success {
+  background: rgba(34, 197, 94, 0.08);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.1);
+}
+
+.status-message.error {
+  background: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.1);
+}
+
+/* ANIMAÇÃO */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem 0.875rem;
+    font-size: 16px; /* Evita zoom em mobile */
+  }
+
+  .contact-form button {
+    padding: 0.875rem 1.5rem;
+  }
+}
