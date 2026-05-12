@@ -61,7 +61,7 @@ export default {
 
             // Enviar email para você (proprietário)
             await resend.emails.send({
-              from: 'noreply@resend.dev',
+              from: 'noreply@iaontiapix.resend.app',
               to: 'isaiaslevi2@gmail.com', // MUDE PARA SEU EMAIL
               subject: `Nova mensagem de ${name}`,
               html: `
@@ -90,7 +90,7 @@ export default {
 
             // Enviar email de confirmação para o usuário
             await resend.emails.send({
-              from: 'noreply@resend.dev',
+              from: 'noreply@iaontiapix.resend.app',
               to: email,
               subject: 'Recebemos sua mensagem!',
               html: `
