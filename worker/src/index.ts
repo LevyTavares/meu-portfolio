@@ -7,17 +7,24 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
+// Interface do ambiente
+interface Env {
+  RESEND_API_KEY?: string;
+}
+
+// Interface para contato
+interface ContactRequest {
+  name: string;
+  email: string;
+  message: string;
+}
+
 // Helper para enviar respostas JSON
-function json(data: any, status = 200) {
+function json(data: Record<string, unknown> | unknown[], status = 200) {
   return new Response(JSON.stringify(data), {
     status,
     headers: { ...corsHeaders, 'Content-Type': 'application/json' },
   });
-}
-
-// Interface do ambiente
-interface Env {
-  RESEND_API_KEY?: string;
 }
 
 // Handler do worker
@@ -39,7 +46,7 @@ export default {
     // Endpoint para formulário de contato
     if (pathname === '/api/contact' && request.method === 'POST') {
       try {
-        const { name, email, message } = (await request.json()) as any;
+        const { name, email, message } = (await request.json()) as ContactRequest;
 
         // Validação simples
         if (!name || !email || !message) {
