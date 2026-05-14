@@ -10,6 +10,7 @@ const corsHeaders = {
 // Interface do ambiente
 interface Env {
   RESEND_API_KEY?: string;
+  CONTACT_TO_EMAIL?: string;
 }
 
 // Interface para contato
@@ -24,6 +25,25 @@ function json(data: Record<string, unknown> | unknown[], status = 200) {
   return new Response(JSON.stringify(data), {
     status,
     headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+  });
+}
+
+function escapeHtml(value: string) {
+  return value.replace(/[&<>"']/g, (character) => {
+    switch (character) {
+      case '&':
+        return '&amp;';
+      case '<':
+        return '&lt;';
+      case '>':
+        return '&gt;';
+      case '"':
+        return '&quot;';
+      case "'":
+        return '&#39;';
+      default:
+        return character;
+    }
   });
 }
 
@@ -61,68 +81,90 @@ export default {
 
         console.log(`Nova mensagem de ${name} (${email}): ${message}`);
 
-        // Tentar enviar email com Resend (se configurado)
-        if (env.RESEND_API_KEY) {
-          try {
-            const resend = new Resend(env.RESEND_API_KEY);
+        if (!env.RESEND_API_KEY || !env.CONTACT_TO_EMAIL) {
+          return json(
+            {
+              error:
+                'Configuração de email incompleta. Defina RESEND_API_KEY e CONTACT_TO_EMAIL.',
+            },
+            500
+          );
+        }
 
-            // Enviar email para você (proprietário)
-            await resend.emails.send({
+        const resend = new Resend(env.RESEND_API_KEY);
+
+        const safeName = escapeHtml(name);
+        const safeEmail = escapeHtml(email);
+        const safeMessage = escapeHtml(message).replace(/\n/g, '<br>');
+
+        const ownerEmailHtml = `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #6ba3ff; border-bottom: 1px solid #6ba3ff; padding-bottom: 10px;">
+              Nova Mensagem do Portfólio
+            </h2>
+
+            <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
+              <p><strong>Nome:</strong> ${safeName}</p>
+              <p><strong>Email:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p>
+              <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
+            </div>
+
+            <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #6ba3ff;">
+              <h3 style="margin-top: 0;">Mensagem:</h3>
+              <p style="line-height: 1.6; color: #333;">${safeMessage}</p>
+            </div>
+
+            <div style="margin-top: 20px; color: #999; font-size: 12px;">
+              <p>Este é um email automático do seu portfólio. Para responder, envie um email para ${safeEmail}.</p>
+            </div>
+          </div>
+        `;
+
+        const confirmationEmailHtml = `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #6ba3ff;">Obrigado por entrar em contato! 💙</h2>
+
+            <p>Olá ${safeName},</p>
+
+            <p>Recebemos sua mensagem e responderemos assim que possível. Valorizamos muito o seu interesse!</p>
+
+            <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
+              <p><strong>Sua mensagem:</strong></p>
+              <p style="color: #666;">${safeMessage}</p>
+            </div>
+
+            <p>Um abraço,<br><strong>FNUF - Frontend Developer</strong></p>
+          </div>
+        `;
+
+        try {
+          await Promise.all([
+            resend.emails.send({
               from: 'noreply@resend.dev',
-              to: 'isaiaslevi2@gmail.com', // MUDE PARA SEU EMAIL
+              to: env.CONTACT_TO_EMAIL,
               subject: `Nova mensagem de ${name}`,
-              html: `
-                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                  <h2 style="color: #6ba3ff; border-bottom: 1px solid #6ba3ff; padding-bottom: 10px;">
-                    Nova Mensagem do Portfólio
-                  </h2>
-                  
-                  <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
-                    <p><strong>Nome:</strong> ${name}</p>
-                    <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-                    <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
-                  </div>
-                  
-                  <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #6ba3ff;">
-                    <h3 style="margin-top: 0;">Mensagem:</h3>
-                    <p style="line-height: 1.6; color: #333;">${message.replace(/\n/g, '<br>')}</p>
-                  </div>
-                  
-                  <div style="margin-top: 20px; color: #999; font-size: 12px;">
-                    <p>Este é um email automático do seu portfólio. Para responder, envie um email para ${email}.</p>
-                  </div>
-                </div>
-              `,
-            });
-
-            // Enviar email de confirmação para o usuário
-            await resend.emails.send({
+              html: ownerEmailHtml,
+            }),
+            resend.emails.send({
               from: 'noreply@resend.dev',
               to: email,
               subject: 'Recebemos sua mensagem!',
-              html: `
-                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                  <h2 style="color: #6ba3ff;">Obrigado por entrar em contato! 💙</h2>
-                  
-                  <p>Olá ${name},</p>
-                  
-                  <p>Recebemos sua mensagem e responderemos assim que possível. Valorizamos muito o seu interesse!</p>
-                  
-                  <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
-                    <p><strong>Sua mensagem:</strong></p>
-                    <p style="color: #666;">${message.replace(/\n/g, '<br>')}</p>
-                  </div>
-                  
-                  <p>Um abraço,<br><strong>FNUF - Frontend Developer</strong></p>
-                </div>
-              `,
-            });
+              html: confirmationEmailHtml,
+            }),
+          ]);
 
-            console.log(`Email enviado com sucesso para ${email}`);
-          } catch (emailError) {
-            console.error('Erro ao enviar email:', emailError);
-            // Não falhar se o email não for enviado, apenas registrar o erro
-          }
+          console.log(`Email enviado com sucesso para ${email}`);
+        } catch (emailError) {
+          console.error('Erro ao enviar email:', emailError);
+          return json(
+            {
+              error:
+                emailError instanceof Error
+                  ? emailError.message
+                  : 'Erro ao enviar email',
+            },
+            500
+          );
         }
 
         return json({

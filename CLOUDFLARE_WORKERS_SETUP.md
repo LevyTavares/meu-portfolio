@@ -127,7 +127,7 @@ export default function App() {
 
 ## 📝 Próximas Melhorias
 
-- [ ] Integrar com serviço de email (SendGrid, Resend, etc)
+- [ ] Integrar com Resend para envio de emails reais
 - [ ] Adicionar banco de dados (D1 do Cloudflare)
 - [ ] Implementar autenticação
 - [ ] Adicionar ratelimiting

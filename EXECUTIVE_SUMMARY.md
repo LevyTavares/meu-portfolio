@@ -194,7 +194,7 @@ wrangler deploy
 
 ## 📈 Próximas Melhorias (Opcionais)
 
-- [ ] **Email Real**: Integrar com Resend ou SendGrid
+- [ ] **Email Real**: Integrar com Resend
 - [ ] **Banco de Dados**: Adicionar Cloudflare D1 (SQLite)
 - [ ] **Admin Dashboard**: Gerenciar mensagens recebidas
 - [ ] **Rate Limiting**: Proteção contra spam

@@ -49,7 +49,10 @@ echo "VITE_API_URL=http://localhost:45181" > .env.local
 
 # Worker - criar .env
 cd worker
-echo "RESEND_API_KEY=re_seu_api_key" > .env
+cat > .env <<'EOF'
+RESEND_API_KEY=re_sua_chave_aqui
+CONTACT_TO_EMAIL=seu-email@exemplo.com
+EOF
 cd ..
 ```
 
@@ -177,10 +180,12 @@ VITE_API_URL=https://seu-worker.workers.dev  # Prod
 ### Worker (.env)
 ```env
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxx
+CONTACT_TO_EMAIL=seu-email@exemplo.com
 ```
 
 ### GitHub Secrets
 - `RESEND_API_KEY` - API key para produção
+- `CONTACT_TO_EMAIL` - seu email para receber os contatos
 
 ---
 
@@ -208,9 +213,9 @@ RESEND_API_KEY=re_xxxxxxxxxxxxxxxx
 ## 🐛 Troubleshooting
 
 ### Emails não chegam?
-1. Verifique se `RESEND_API_KEY` está em GitHub Secrets
-2. Confirme que está usando domínio `iaontiapix.resend.app`
-3. Verifique pasta de SPAM
+1. Verifique se `RESEND_API_KEY` e `CONTACT_TO_EMAIL` estão configurados
+2. Confirme se a API key do Resend está ativa e se o domínio/resend.dev está aceitando envios
+3. Verifique a pasta de SPAM
 
 ### CORS errors?
 1. Verifique `VITE_API_URL` apontando para worker correto
@@ -279,7 +284,7 @@ MIT License - veja [LICENSE](./LICENSE) para detalhes
 ### Recursos úteis:
 - [React Docs](https://react.dev)
 - [Cloudflare Workers](https://workers.cloudflare.com)
-- [Resend API](https://resend.com/docs)
+- [Resend Docs](https://resend.com/docs)
 - [Vite Guide](https://vitejs.dev/guide)
 
 ---

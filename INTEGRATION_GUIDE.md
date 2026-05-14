@@ -174,7 +174,7 @@ O GitHub Actions automaticamente fará deploy quando você der push na branch `m
 ## 🛠️ Próximas Melhorias
 
 ### [ ] Integrar com Serviço de Email
-- Opções: Resend, SendGrid, Mailgun
+- Opção recomendada: Resend
 - Fazer as mensagens chegarem no seu email real
 
 ### [ ] Banco de Dados

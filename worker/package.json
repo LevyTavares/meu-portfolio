@@ -9,7 +9,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "resend": "^3.0.0"
+    "resend": "^3.5.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240512.0",
