@@ -121,32 +121,41 @@ export default {
         `;
 
         const confirmationEmailHtml = `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2 style="color: #6ba3ff;">Obrigado por entrar em contato! 💙</h2>
-
-            <p>Olá ${safeName},</p>
-
-            <p>Recebemos sua mensagem e responderemos assim que possível. Valorizamos muito o seu interesse!</p>
-
-            <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
-              <p><strong>Sua mensagem:</strong></p>
-              <p style="color: #666;">${safeMessage}</p>
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+            <div style="padding: 40px 0; text-align: center;">
+              <h2 style="margin: 0; font-size: 24px; font-weight: 600; color: #000;">Obrigado por entrar em contato!</h2>
             </div>
 
-            <p>Um abraço,<br><strong>FNUF - Frontend Developer</strong></p>
+            <div style="padding: 0 20px;">
+              <p style="margin: 20px 0; font-size: 15px; line-height: 1.6;">Olá <strong>${safeName}</strong>,</p>
+
+              <p style="margin: 20px 0; font-size: 15px; line-height: 1.6;">Recebemos sua mensagem com sucesso. Vou revisar e responder em breve.</p>
+
+              <div style="margin: 30px 0; padding: 20px; background: #fafafa; border-radius: 8px; border-left: 3px solid #6ba3ff;">
+                <p style="margin: 0 0 10px 0; font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 0.5px;">Sua mensagem:</p>
+                <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #333;">${safeMessage}</p>
+              </div>
+
+              <p style="margin: 30px 0 0 0; font-size: 14px; line-height: 1.6; color: #666;">Atenciosamente,<br><strong style="color: #000;">Vessel</strong><br><span style="color: #999;">Frontend Developer</span></p>
+            </div>
+
+            <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e5e5; text-align: center; font-size: 12px; color: #999;">
+              <p style="margin: 0;">Este é um e-mail automático. Por favor, não responda diretamente para este endereço.</p>
+            </div>
           </div>
         `;
 
         try {
           await Promise.all([
             resend.emails.send({
-              from: 'noreply@resend.dev',
+              from: 'Vessel <contato@fnuf.me>',
               to: env.CONTACT_TO_EMAIL,
+              reply_to: email,
               subject: `Nova mensagem de ${name}`,
               html: ownerEmailHtml,
             }),
             resend.emails.send({
-              from: 'noreply@resend.dev',
+              from: 'Vessel <contato@fnuf.me>',
               to: email,
               subject: 'Recebemos sua mensagem!',
               html: confirmationEmailHtml,
