@@ -21,7 +21,7 @@ async function testResendAPI() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'noreply@iaontiapix.resend.app',
+        from: 'noreply@resend.dev',
         to: 'isaiaslevi2@gmail.com',
         subject: 'Teste de API Key Resend',
         html: '<p>Se você vê isso, a API Key está funcionando! ✅</p>',
