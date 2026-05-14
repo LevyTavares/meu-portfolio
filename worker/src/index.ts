@@ -66,9 +66,20 @@ export default {
     // Endpoint para formulário de contato
     if (pathname === '/api/contact' && request.method === 'POST') {
       try {
-        const { name = 'Sem nome', email = 'no-reply@fnuf.me', message = '' } = (await request.json()) as ContactRequest;
+        const { name, email, message } = (await request.json()) as ContactRequest;
 
-        // Uso direto das variáveis de ambiente; saída mínima de erros se faltar configuração
+        // Validação obrigatória dos campos
+        if (!name || !email || !message) {
+          return json({ error: 'Campos obrigatórios: name, email, message' }, 400);
+        }
+
+        // Validação básica de email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          return json({ error: 'Email inválido' }, 400);
+        }
+
+        // Uso direto das variáveis de ambiente
         if (!env.RESEND_API_KEY || !env.CONTACT_TO_EMAIL) {
           return json({ error: 'Configuração de email incompleta.' }, 500);
         }
