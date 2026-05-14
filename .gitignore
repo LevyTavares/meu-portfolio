@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 worker/.env
+# Environment files (secrets)
+.env
+.env.local
+.env.production
+worker/.env.production
