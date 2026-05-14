@@ -2,7 +2,7 @@ import { Resend } from 'resend';
 
 // CORS headers
 const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Origin': 'https://fnuf.me',
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
 };
@@ -66,29 +66,11 @@ export default {
     // Endpoint para formulário de contato
     if (pathname === '/api/contact' && request.method === 'POST') {
       try {
-        const { name, email, message } = (await request.json()) as ContactRequest;
+        const { name = 'Sem nome', email = 'no-reply@fnuf.me', message = '' } = (await request.json()) as ContactRequest;
 
-        // Validação simples
-        if (!name || !email || !message) {
-          return json({ error: 'Campos obrigatórios: name, email, message' }, 400);
-        }
-
-        // Validar email
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-          return json({ error: 'Email inválido' }, 400);
-        }
-
-        console.log(`Nova mensagem de ${name} (${email}): ${message}`);
-
+        // Uso direto das variáveis de ambiente; saída mínima de erros se faltar configuração
         if (!env.RESEND_API_KEY || !env.CONTACT_TO_EMAIL) {
-          return json(
-            {
-              error:
-                'Configuração de email incompleta. Defina RESEND_API_KEY e CONTACT_TO_EMAIL.',
-            },
-            500
-          );
+          return json({ error: 'Configuração de email incompleta.' }, 500);
         }
 
         const resend = new Resend(env.RESEND_API_KEY);
